@@ -3,22 +3,244 @@
 
     <!-- head : 웹 문서의 추가적인 속성들을 정의 -->
     <head>
-        <!-- 문서의 제목 -->
-        <title>HTML5 기본 태그</title>
+        <title>HTML5 기본 태그</title> <!-- 문서의 제목 -->
         <!-- 문서의 추가적인 속성 -->
-        <meta charset="utf-8"> <!--웹 문서의 문자 셋 설정-->
-        <style></style>
+        <meta charset="utf-8"> <!--제목표현, 글자를 굵게 표현 / 태그에 따라 크기를 다르게 표현한다.-->
+        <style>
+            div{
+                background-color: wheat;
+                margin-top: 10px;
+                height: 50px;
+            }
+            span{
+                background-color: yellow;
+                margin-right: 10px;
+                width: 100px; 
+                height: 100px;
+            }
+        </style>
         <script></script>
     </head>
 
     <body>
+        <h1>BASIC TEST</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipi
+            scing elit. Morbi rutrum pretium elit, at iaculis du
+            i congue facilisis. <br> Sed lorem urna, adipiscing eget
+            pharetra ullamcorper, facilisis id sapien. Phasellus
+            ac pellentesque odio. </p>
+             <p>Integer nibh tellus, tristique quis blandit q
+            uis, consequat in nunc. </p>
+
+        <h1> a &lt;b   b&gt; c </&b> </h1>
+        
         <!-- 보여줄 내용 -->
         <!-- h1~h6 제목 표현 --> 
         <h1>header - h1</h1>
-        <h2>header - &nbsp&nbsp&nbsp h2</h2>
-        <h3>header - h3</h3>
+        <h2>header - h2</h2>
+        <h3>header - &nbsp&nbsp&nbsp h3</h3>
         <h4>header - h4</h4>
         <h5>header - h5</h5>
         <h6>header - h6</h6>
+        <hr>
+        <i> <!--기울이기-->
+            <h1>하이퍼링크</h1>ㄴ
+            <a href="http://www.bitcamp.co.kr">비트캠프</a><br>
+            <a href="http://www.naver.com">네이버</a><br>
+            <a href="http://www.daum.net">다음</a>
+        </i>
+        <br><br><hr>
+        <h1>글머리기호</h1>
+        <h3>ul(unordered list)</h3>
+        <ul>
+            <li>사과</li>
+            <li>바나나</li>
+            <li>수박</li>
+        </ul>
+        <h3>ol(ordered list)</h3>
+        <ol>
+            <li>사과</li>
+            <li>바나나</li>
+            <li>수박</li>
+        </ol>
+        <hr>
+        <h1>테이블 thead, tfoot 있는 버전</h1>
+        <table border="1">
+            <thead>
+                <tr>
+                    <td>thead 1</td>
+                    <td>thead 2</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>tbody 1-2</td>
+                    <td>tbody 1-2</td>
+                </tr>
+                <tr>
+                    <td>tbody 2-1</td>
+                    <td>tbodt 2-2</td>
+                </tr>
+                <tr>
+                    <td>111</td>
+                    <td>222</td>
+                    <td>333</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>tfoot 1</td>
+                    <td>tfoot 2</td>
+                </tr>
+            </tfoot>
+        </table>
+        <h1>테이블 thead, tfoot 없는 버전</h1>
+        <table border="1">
+                <tr>
+                    <th>thead 1</th> <!--가운데 처림 볼드처리-->
+                    <th>thead 2</th>
+                </tr>
+            <tbody>
+                <tr>
+                    <td>tbody 1-2</td>
+                    <td>tbody 1-2</td>
+                </tr>
+                <tr>
+                    <td>tbody 2-1</td>
+                    <td>tbodt 2-2</td>
+                </tr>
+                <tr>
+                    <td>111</td>
+                    <td>222</td>
+                    <td>333</td>
+                </tr>
+            </tbody>
+                <tr>
+                    <td>tfoot 1</td>
+                    <td>tfoot 2</td>
+                </tr>
+        </table>
+        <h1>테이블 셀 병합</h1>
+        <table border="1">
+            <tr>
+                <th colspan="2">지역별 홍차</th>
+            </tr>
+            <tr>
+                <th rowspan="3">중국</th>
+                <td>정산소종</td>
+            </tr>
+            <tr>
+                <td>기문</td>
+            </tr>
+            <tr>
+                <td>운남</td>
+            </tr>
+            <tr>
+                <th rowspan="4">인도 및 스리랑카</th>
+                <td>아삼</td>
+            </tr>
+            <tr>
+                <td>실론</td>
+            </tr>
+            <tr>
+                <td>다질링</td>
+            </tr>
+            <tr>
+                <td>닐기리</td>
+            </tr>
+        </table><hr>
+
+        <h1>이미지 태그</h1>
+        <img src="mini1.jpg" height="300" width="300">
+        <img src="mini2.jpg" height="300" width="300">
+        <img src="image/bugsbunny.jpg" alt="벅스버니 이미지">
+        <img src="http://placehold.it/500x100">
+        <hr>
+
+        <h1>div</h1>
+        <div>div - 1</div>
+        <div>div - 2</div>
+        <div>div - 3</div>
+        <h1>span</h1>
+        <span>span - 1</span>
+        <span>span - 2</span>
+        <span>span - 3</span>
+        <hr>
+
+        <h1>Audio</h1>
+        <audio src="media/old_pop.mp3" 
+                controls autoplay preload="10" muted loop>
+                <!-- autoplay는 크롬 설정 바꾸면 가능 -->
+        </audio>
+        <hr>
+
+        <h1>Video</h1>
+        <video src="media/trailer.mp4" 
+                controls preload="auto" poster="mini1.jpg" loop autoplay
+                width="500">
+        </video>
+        <p>controls : 영상 컨트롤러 / preload : auto|metadata|none / <br>
+            poster : 영상시작전 이미지 / loop : 반복재생 / muted : 음소거 / autoplay : 자동재생</p>
+
+        <h1>Form Tag</h1>
+        <form action="#" method="get">
+            type=text : <input type="text" name="username" value="tester"> <br>
+            type=password : <input type="password" name="pw"> <br>
+            type=checkbox : <input type="checkbox" name="chk" value="ok1">
+            <input type="checkbox" name="chk" value="ok2"><br>
+            type=radio : A<input type="radio" name="choice" value="A">
+            B<input type="radio" name="choice" value="B">
+            C<input type="radio" name="choice" value="C">
+            D<input type="radio" name="choice" value="D">
+            F<input type="radio" name="choice" value="F"> <br>
+            type=color : <input type="color" name="color"> <br>
+            type=datetime-local : <input type="datetime-local" name="localDatetime"><br>
+            type=date : <input type="date" name="date"><br>
+            type=time : <input type="time" name="time"><br>
+            type=month : <input type="month"><br>
+            type=week : <input type="week"> <br>
+            type=email : <input type="email" name="email"><br>
+            type=file : <input type="file" name="userPhoto"><br>
+            type=hidden : 화면에는 표현되지 않는다.
+            <input type="hidden" name="idx" value="1"> <br>
+            type=image : <input type="image" src="mini1.jpg" height="50"><br>
+            type=number : <input type="number" name="num"> <br>
+            type=range : <input type="range" name="age" min="0" , max="150"> <br>
+            type= tel : <input type="tel"> <br>
+            type=url : <input type="url" name="url"><br> <br> <br>
+            <input type="submit"> <input type="reset"><br><br><br>
+            <select name="year">
+                <option value = "2021">2021</option>
+                <option value = "2020">2020</option>
+                <option value = "2019">2019</option>
+                <option value = "2018">2018</option>
+            </select>
+            </form>
+
+            <form action="#" method="get">
+                <fieldset>
+                <legend>회원가입 폼</legend>
+                <table>
+                <tr>
+                <th><label for="userid">아이디</label></th>
+                <td>
+                <input type="text" id="userid" name="userid">
+                </td>
+                </tr>
+                <tr>
+                <th><label for="pw">비밀번호</label></th>
+                <td>
+                <input type="password" id="pw" name="pw">
+                </td>
+                </tr>
+                <tr>
+                <td></td>
+               <td>
+                <input type="submit" value="로그인">
+                </td>
+                </tr>
+                </table>
+                </fieldset>
+                </form>
     </body>
 </html>
