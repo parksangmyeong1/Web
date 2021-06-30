@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p:nth-child(1){}
+        p:nth-child(2){font-size: 100%;}
+        p:nth-child(3){font-size: 150%;}
+        p:nth-child(4){font-size: 200%;}
+
+        p:nth-child(5){font-size: 1.0em;}
+        p:nth-child(6){font-size: 1.5em;}
+        p:nth-child(7){font-size: 2.0em;}
+        
+        p:nth-child(8){font-size: 16px;}
+        p:nth-child(9){font-size: 24px;}
+        p:nth-child(10){font-size: 32px;}
+
+        p:first-child{
+            /* background-color: mediumvioletred;
+            background-color: rgb(21, 87, 87); 
+            background-color: rgba(255, 0, 0, 0.384);
+            background-color: #ff0000; */
+        }
+    </style>
+    <style>
+        body, div{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-image: url(../mini1.jpg);
+        }
+        div.border_box{
+            width: 240px;
+            height: 240px;
+            background-color: white;
+
+            border-width: 10px;
+            border-style: double;
+            border-color: royalblue;
+            
+            /* 위와 같은 내용 한줄로 표현 */
+            border: 10px double royalblue;
+
+            margin: 10px;
+
+            padding: 10px;
+        }
+        div.box{
+            background-image: url(../mini2.jpg);
+        }
+    </style>
+</head>
+<body>
+    <div class="border_box">
+        border_box
+    </div>
+    <div class="box">
+        box
+    </div>
+    <p>안녕하세요</p>
+    <p>안녕하세요</p>
+    <p>안녕하세요</p>
+    <p>안녕하세요</p>
+    
+    <p>안녕하세요</p>
+    <p>안녕하세요</p>
+    <p>안녕하세요</p>
+
+    <p>안녕하세요</p>
+    <p>안녕하세요</p>
+    <p>안녕하세요</p>
+    <hr>
+
+
+</body>
+</html>
