@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .circle{
+            width: 100px;
+            height: 100px;
+            border: 2px solid #aaa;
+            border-radius: 50%;
+            background-size: contain;
+            position: absolute;
+        }
+        .circle:hover{
+            border-radius: 50%; background-image: url(../mini1.jpg);
+        }
+        #main{
+            width: 600px;
+            height: 300px;
+            border: 1px solid #aaa;
+            background-color: thistle;
+            position: relative;
+
+        }
+        #main>div:first-child{
+            left: 10px;
+            top: 10px;
+        }
+        #main>div:nth-child(2){
+            right: 10px;
+            top: 10px;
+        }
+        #main>div:nth-child(3){
+            left: 10px;
+            bottom: 10px;
+        }
+        #main>div:nth-child(4){
+            right: 10px;
+            bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+</body>
+</html>
