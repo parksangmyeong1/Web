@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Kirang+Haerang&family=Nanum+Brush+Script&family=Nanum+Pen+Script&display=swap');
+
+.font_nanumPen{
+    font-family: 'Nanum Pen Script', cursive;
+}
+.font_nanumBrush{
+    font-family: 'Nanum Brush Script', cursive;
+}
+.font_kirang{
+    font-family: 'Kirang Haerang', cursive;
+}
