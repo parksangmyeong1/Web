@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: #f0f2f5;
+        }
+        #wrap{
+            width: 800px;
+            overflow: hidden;
+        }
+        #main_left{
+            float: left;
+            width: 370px;
+            height: 600px;
+            
+        }
+        #main_right{
+            float: right;
+            width: 300px;
+            height: 496px;
+            margin-right: 10px;
+        }
+        #main_top{
+            overflow: hidden;
+            width: 800px;
+            height: 586px;
+            background-color: #f0f2f5;
+            margin-top: 200px;
+        }
+        #login{
+            background-color: white;
+            width: 260px;
+            height: 250px;
+            padding: 10px;
+            border-radius: 10px;
+            padding: 10px;
+            text-align:center
+        }
+        .div_algin_center{
+            margin: 0 auto;
+        }
+        footer>ul{
+            list-style: none;
+        }
+        footer>ul>li{
+            display: inline-block;
+            font-family: inherit;
+            padding-right: 4px;
+            font-size: 12px;
+        }
+        #bottom{
+            display: inline-block;
+            font-family: inherit;
+            font-size: 8px;
+        }
+        input[type=text]{
+            width: 240px;
+            height: 35px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            padding-left: 5px;
+        }
+        input[type=submit]{
+            width: 250px;
+            height: 35px;
+            display: block;
+            margin-top: 10px;
+            background-color: #1877f2;
+            font-size: 18px;
+            color: white;
+        }
+        button{
+            width: 110px;
+            height: 40px;
+            margin-top: 30px;
+            background-color: #42b72a;
+            color: white;
+        }
+        .border{
+            border: 1px solid #aaa;
+        }
+        .find_pw{
+            font-size: 11px;
+            margin-top: 30px;
+        }
+        .page_make{
+            font-size: 12px;
+            margin-top: 20px;
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap" class="div_algin_center"> 
+        <div id="main_top">
+            <div id="main_left">
+                <img src="../facebook.png" width="230px" height="60px">
+                <p>Facebook에서 전세계에 있는 친구, 가족, 지인들과 함께 이야기를 나눠보세요.</p>
+            </div>
+            <div id="main_right">
+                <div id="login" class="border">
+                    <input type="text" class="id border" placeholder="이메일 또는 전화번호">
+                    <input type="text"  class="pw border" placeholder="비밀번호">
+                    <input type="submit" value="로그인" class="login_btn">
+                    <a href="#" class="find_pw">비밀번호를 잊으셨나요?</a>
+                    <hr>
+                    <button><a href="#">새 계정 만들기</a></button>
+                </div>
+                <p class="page_make">유명인, 밴드, 비즈니스를 위한 <a href="#">페이지 만들기</a></p>
+            </div>
+        </div>
+        <footer>
+            <ul>
+                <li>
+                    <a href="#">한국어</a>
+                </li>
+                <li>
+                    <a href="#">English(US)</a>
+                </li>
+                <li>
+                    <a href="#">Tiếng Việt</a>
+                </li>
+                <li>
+                    <a href="#">Bahasa Indonesia</a>
+                </li>
+                <li>
+                    <a href="#">ภาษาไทย
+                    </a>
+                </li>
+                <li>
+                    <a href="#">Español
+                    </a>
+                </li>
+                <li>
+                    <a href="#">中文(简体)
+                    </a>
+                </li>
+                <li>
+                    <a href="#">日本語
+                    </a>
+                </li>
+                <li>
+                    <a href="#">Português (Brasil)
+                    </a>
+                </li>
+                <li>
+                    <a href="#">Français (France)
+                    </a>
+                </li>
+                <li>
+                    <a href="#">Deutsch
+                    </a>
+                </li>
+            </ul>
+            <ul class="category">
+                <li>
+                    <a href="#">
+                        가입하기
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        로그인
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Messenger
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Facebook Lite
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Watch
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        사람
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        페이지
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        페이지 카테고리
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        장소
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        게임
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        위치
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Marketplace
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Facebook Pay
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        그룹
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        채용 정보
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Oculus
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Portal
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Instagram
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        지역
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        기부 캠페인
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        서비스
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        투표 정보 센터
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        정보
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        광고 만들기
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        페이지 만들기
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        개발자
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        채용 정보
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        개인정보처리방침
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        쿠키
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        AdChoices
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        이용약관
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        고객 센터
+                    </a>
+                </li>
+            </ul>
+            <div id="bottom">
+                Facebook &copy; 2021
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
