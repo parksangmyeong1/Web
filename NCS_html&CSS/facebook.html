@@ -4,120 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="facebook.css">
     <title>Document</title>
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-        }
-        body{
-            background-color: #f0f2f5;
-        }
-        #wrap{
-            width: 800px;
-            overflow: hidden;
-        }
-        #main_left{
-            float: left;
-            width: 370px;
-            height: 600px;
-            
-        }
-        #main_right{
-            float: right;
-            width: 300px;
-            height: 496px;
-            margin-right: 10px;
-        }
-        #main_top{
-            overflow: hidden;
-            width: 800px;
-            height: 586px;
-            background-color: #f0f2f5;
-            margin-top: 200px;
-        }
-        #login{
-            background-color: white;
-            width: 260px;
-            height: 250px;
-            padding: 10px;
-            border-radius: 10px;
-            padding: 10px;
-            text-align:center
-        }
-        .div_algin_center{
-            margin: 0 auto;
-        }
-        footer>ul{
-            list-style: none;
-        }
-        footer>ul>li{
-            display: inline-block;
-            font-family: inherit;
-            padding-right: 4px;
-            font-size: 12px;
-        }
-        #bottom{
-            display: inline-block;
-            font-family: inherit;
-            font-size: 8px;
-        }
-        input[type=text]{
-            width: 240px;
-            height: 35px;
-            border-radius: 10px;
-            margin-bottom: 10px;
-            padding-left: 5px;
-        }
-        input[type=submit]{
-            width: 250px;
-            height: 35px;
-            display: block;
-            margin-top: 10px;
-            background-color: #1877f2;
-            font-size: 18px;
-            color: white;
-        }
-        button{
-            width: 110px;
-            height: 40px;
-            margin-top: 30px;
-            background-color: #42b72a;
-            color: white;
-        }
-        .border{
-            border: 1px solid #aaa;
-        }
-        .find_pw{
-            font-size: 11px;
-            margin-top: 30px;
-        }
-        .page_make{
-            font-size: 12px;
-            margin-top: 20px;
-            text-align:center;
-        }
-    </style>
 </head>
 <body>
-    <div id="wrap" class="div_algin_center"> 
-        <div id="main_top">
-            <div id="main_left">
-                <img src="../facebook.png" width="230px" height="60px">
-                <p>Facebook에서 전세계에 있는 친구, 가족, 지인들과 함께 이야기를 나눠보세요.</p>
-            </div>
-            <div id="main_right">
-                <div id="login" class="border">
-                    <input type="text" class="id border" placeholder="이메일 또는 전화번호">
-                    <input type="text"  class="pw border" placeholder="비밀번호">
-                    <input type="submit" value="로그인" class="login_btn">
-                    <a href="#" class="find_pw">비밀번호를 잊으셨나요?</a>
-                    <hr>
-                    <button><a href="#">새 계정 만들기</a></button>
+    <div id="body">
+        <div id="wrap" class="div_algin_center"> 
+            <div id="main_top">
+                <div id="main_left">
+                    <img src="../facebook.png" width="300px" height="60px">
+                    <h2>Facebook에서 전세계에 있는 친구, 가족, 지인들과 함께 이야기를 나눠보세요.</h2>
                 </div>
-                <p class="page_make">유명인, 밴드, 비즈니스를 위한 <a href="#">페이지 만들기</a></p>
+                <div id="main_right">
+                    <div id="login" class="border">
+                        <input type="text" class="id border" placeholder="이메일 또는 전화번호">
+                        <input type="text"  class="pw border" placeholder="비밀번호">
+                        <input type="submit" value="로그인" class="login_btn">
+                        <div id="find_pw">
+                            <a href="#" class="find_pw">비밀번호를 잊으셨나요?</a>
+                        </div>
+                        <button id="find_pw"><a href="#"><b>새 계정 만들기</b></a></button>
+                    </div>
+                    <p class="page_make">유명인, 밴드, 비즈니스를 위한 <a href="#">페이지 만들기</a></p>
+                </div>
             </div>
+           
         </div>
+    </div>
+    <div id="footer_outer">
         <footer>
             <ul>
                 <li>
@@ -160,7 +74,9 @@
                     <a href="#">Deutsch
                     </a>
                 </li>
+                <input type="button" value="+">
             </ul>
+            <hr class="hr_margin">
             <ul class="category">
                 <li>
                     <a href="#">

@@ -1,0 +1,42 @@
+body { 
+    margin: 0; 
+    background:#f5f6f7;
+}
+.container { 
+    width:768px;
+    padding: 76px;
+    margin:0 auto;
+    padding: 100px 0;
+    text-align:center;
+}
+#login_section{
+    width:400px;
+    margin:0 auto;
+}
+.logo{
+    margin-bottom: 40px;
+}
+.id{
+    padding: 8px 35px 8px 11px;
+    width: 350px;
+    border: 1px solid #d7d7d7;
+    margin: 5px auto;
+}
+.pw{
+    padding: 8px 35px 8px 11px;
+    width: 350px;
+    border: 1px solid #d7d7d7;
+    margin: 5px auto;
+}
+input:focus-visible{
+    outline: none;
+    border: 1px solid #03c75a;
+}
+input[type=submit]{
+    width: 100%;
+    background-color: #03c75a;
+    color: #fff;
+    padding: 8px 35px 8px 11px;
+    border: 1px solid #d7d7d7;
+    margin: 5px auto;
+}

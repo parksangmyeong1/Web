@@ -1,0 +1,116 @@
+*{
+    margin: 0;
+    padding: 0;
+}    
+#body{
+    background-color: #f0f2f5;
+}
+#wrap{
+    width: 980px;
+    overflow: hidden;
+}
+#main_left{
+    float: left;
+    width: 548px;
+}
+#main_right{
+    float: right;
+    width: 396px;
+    margin-right: 10px;
+}
+#main_top{
+    height: 586px;
+    margin-top: 200px;
+}
+#login{
+    background-color: white;
+    border-radius: 6px;
+    padding: 10px;
+    text-align : center;
+}
+footer{
+    margin-top: 10px;
+}
+footer>ul{
+    list-style: none;
+    overflow: hidden;
+}
+footer>ul>li{
+    float: left;
+    margin-right: 20px;
+    font-size: 11px;
+    line-height: 20px;
+    }
+footer a{
+    text-decoration: none;
+}
+#footer_outer{
+    width: 980px;
+    margin: 0 auto;
+}
+#bottom{
+    font-size: 8px;
+}
+input[type=text]{
+    border-radius: 6px;
+    margin-bottom: 10px;
+    font-size: 17px;
+    padding: 14px 16px;
+    width: 330px;
+}
+input[type=submit]{
+    width: 364px;
+    height: 48px;
+    background-color: #1877f2;
+    font-size: 18px;
+    color: white;
+    border: none;
+    border-radius: 6px;
+}
+input[type="button"] {
+    width: 40px;
+    height: 30px;
+    font-size: 25px;
+    margin-left: 20px;
+    border: 1px solid #ddd;
+    color: rgb(53, 52, 52);
+}
+
+input:focus-visible{
+    outline: 0;
+    border-color: #1877f2;
+    box-shadow: 0 0 0 2px #e7f3ff;
+}
+button{
+    margin-top: 17px;
+    border-radius: 6px;
+    background-color: #42b72a;
+    border: none;
+}
+button>a{
+    text-decoration: none;
+    color: white;
+}
+.border{
+    border: 1px solid #aaa;
+}
+.find_pw{
+    font-size: 11px;
+    text-decoration: none;
+    color: #1877f2;
+}
+.page_make{
+    font-size: 12px;
+    margin-top: 20px;
+    text-align:center;
+}
+#find_pw{
+    border-bottom: 1px solid black;
+    padding: 10px;
+}
+.hr_margin{
+    margin-top: 10px;
+}
+.div_algin_center{
+    margin: 0 auto;
+}
