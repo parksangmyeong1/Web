@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Window Object</title>
+    <script>
+
+        // var output = '';
+
+        // for(var key in window){
+        //     output += '['+key+']'+ window[key] + '  \n';
+        // }
+        // console.log(output);
+
+        // // 새로운 브라우저를 생성
+        // window.open(); // window 생략가능
+
+        // window.open('http://www.naver.com', 'new window', 'width=300, height=400');
+        
+        // var child = window.open('','child','width = 350, height = 300');
+
+        // var html = '<h1 onclick="self.close();">윈도우 닫기</h1>';
+
+        // child.document.write('<h1>부모 윈도우에서 텍스트를 추가</h1>'+html);
+
+        // console.log(screen);
+
+        // console.log(location);
+
+        // setTimeout(function(){
+        //     location.href = 'http://www.naver.com';
+        // }, 3000);
+
+        // if(confirm('네이버 페이지로 이동하시겠습니까?')){
+        //     location.href = 'http://www.naver.com';
+        // }
+
+        // console.log(navigator);
+
+        window.onload = function(){
+
+            // 태그 생성, 텍스트 생성 -> 태그에 텍스트를 붙여준다.
+
+            // h1 tag 생성
+            var header = document.createElement('h1');
+            // 텍스트 Node 생성
+            var text = document.createTextNode('Hello DOM');
+
+            // tag에 텍스트 노드를 적용
+            header.appendChild(text); // <h1>Hell DOM</h1>
+
+            document.body.appendChild(header);
+
+            // img 태그 생성
+            var img = document.createElement('img');
+            // img.src = '../mini1.jpg';
+            // img.width = 300;
+            // img.height = 250;
+            img.setAttribute('src', '../mini1.jpg');
+            img.setAttribute('width', '300px');
+
+            // 지정된 속성이 아닌 속성을 추가
+            img.setAttribute('data-role', 'image');
+
+            document.body.appendChild(img);
+
+            console.log(document.body.innerHTML);   // body 모두 표시
+            console.log(document.body.innerText);   // text만 표시
+
+            // document.body.innerText = '<h1>test</h1>';
+            // document.body.innerHTML = '<h1>test</h1>';
+        }
+    </script>
+    <!-- <script>
+
+        window.onload = function(){
+            //HTML 문서에 작성된 태그 요소들을 캐스팅 -> 문서객체로 만드는 것
+            var header1 = document.getElementById('header1');
+            var header2 = document.getElementById('header2');
+
+            console.log(typeof header1, header1.innerHTML);
+            console.log(typeof header2, header2.innerHTML);
+
+            header1.innerHTML = '안녕히계세요!!!';
+            header2.innerHTML = '<i>다음에 만나요!!!</i>';
+
+            header1.style.backgroundColor = 'red';
+            header1.style.color = 'white';
+            header1.style.padding = '10px';
+
+            var lang = document.getElementsByName('language'); 
+            console.log(typeof lang, lang);
+
+            var inputs = document.getElementsByTagName('input');
+            console.log(typeof inputs, inputs);
+
+            var checkbox = document.querySelector('#header2+input');
+            console.log(typeof checkbox, checkbox);
+
+            var header3 = document.getElementById('header3');
+            
+            var header4 = document.getElementById('header4');
+            
+            var input1 = document.getElementById('input'); 
+
+            div.removeChild(header4);
+            div.removeChild(input1);
+
+        }
+
+    </script> -->
+
+</head>
+<body>
+    <!-- <h1 id="header1"><i>안녕하세요</i></h1>
+    <h2 id="header2">반갑습니다.</h2>
+    <div id="div">
+        <h1 id="header4">제거대상 div</h1>
+        <h1>header</h1>
+        <input id="input" type="checkbox" name="lang" value="java"> java <br>
+    </div>
+    <h1 id="header3">제거대상 h1 </h1>
+    <input type="checkbox" name="language" value="java" checked> java <br>
+    <input type="checkbox" name="language" value="Javascript" checked> Javascript <br>
+    <input type="checkbox" name="language" value="HTML5"> html5 -->
+</body>
+</html>
