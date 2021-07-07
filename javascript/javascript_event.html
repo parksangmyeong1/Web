@@ -6,10 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Javascript Event</title>
     <style>
-        #btn{
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
             background-color: greenyellow;
         }
-
+        h2 {
+            background-color: khaki;
+        }
     </style>
     <script>
         
@@ -38,7 +44,6 @@
 
             // 버튼A 버튼B 를 클릭할때 클릭횟수를 화면에서 출력
             // 버튼과 출력 영역을 캐스팅
-
             var btnA = document.getElementById('btnA');
             var btnB = document.getElementById('btnB');
             var cntA = document.getElementById('cntA');
@@ -52,6 +57,7 @@
             }
             btnB.onclick = function(){
                 // 카운트를 증가시키고 화면을 갱신
+                //var cnt = Number(cntB.innerText) + 1;
                 cntB.innerText = Number(cntB.innerText) + 1;
 
                 // 이벤트 강제 발생
