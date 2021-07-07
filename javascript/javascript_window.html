@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Javascript Window Object</title>
-    <script>
+    <!-- <script>
 
         // var output = '';
 
@@ -72,7 +72,7 @@
             // document.body.innerText = '<h1>test</h1>';
             // document.body.innerHTML = '<h1>test</h1>';
         }
-    </script>
+    </script> -->
     <!-- <script>
 
         window.onload = function(){
@@ -111,7 +111,18 @@
         }
 
     </script> -->
+    <script>
+        window.onload = function(){
+            var headers = document.getElementsByTagName('h2');
+            var headers2 = document.getElementById('h2');
+            headers[0].innerHTML = 'with getElementsByTagName()';
+            headers[1].innerHTML = 'With getElementsByTagName()';
 
+            console.log(typeof headers[0]);
+            console.log(typeof headers[1]);
+            headers2.innerHTML = 'headers2';
+        }
+    </script>
 </head>
 <body>
     <!-- <h1 id="header1"><i>안녕하세요</i></h1>
@@ -125,5 +136,8 @@
     <input type="checkbox" name="language" value="java" checked> java <br>
     <input type="checkbox" name="language" value="Javascript" checked> Javascript <br>
     <input type="checkbox" name="language" value="HTML5"> html5 -->
+    <h2>header</h2>
+    <h2>header</h2>
+    <h2 id="h2">header</h2>
 </body>
 </html>
