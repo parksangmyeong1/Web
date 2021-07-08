@@ -1,6 +1,5 @@
 // 회원의 정보 : 아이디, 비밀번호, 이름
 // Member -> 생성자 함수를 정의
-
 function Member(id, pw, name) {
     this.userID = id;
     this.userPW = pw;
@@ -28,8 +27,8 @@ var members = [];   // new Array()
 
 window.onload = function () {
 
-    //localStorage에 저장된 데이터가 있는지 확인
-    // members가 없으면 null 반환
+    // localStorage에 저장된 데이터가 있는지 확인
+    // localStorage에 members가 없으면 null 반환
     if (localStorage.getItem('members') == null) {
         // 배열 members를 저장
         localStorage.setItem('members',JSON.stringify(members));
@@ -41,13 +40,7 @@ window.onload = function () {
         setList();
     }
 
-    
-
     // 사용자가 입력한 값
-    // var userID = document.querySelector('#userID').value;
-    // var userPW = document.querySelector('#userPW').value;
-    // var userRepw = document.querySelector('#userRepw').value;
-    // var userName = document.querySelector('#userName').value;
     var userID = document.querySelector('#userID');
     var userPW = document.querySelector('#userPW');
     var userRepw = document.querySelector('#userRepw');
@@ -56,9 +49,8 @@ window.onload = function () {
     // regForm 캐스팅
     var regForm = document.getElementById('regForm');
 
-    // 브라우저 안에서 해결하기 때문에 보낼 필요 없다.
+    
     regForm.onsubmit = function () {
-        
         
         // trim : 좌우 입력 공백을 없애준다.
         if (userID.value.trim().length<1) {
@@ -69,7 +61,7 @@ window.onload = function () {
             return false;
         }
 
-        if (userPW.value.trim().length < 1 || userRepw.value.trim().length<1) {
+        if (userPW.value.trim().length < 1) {
             // alert('비밀번호를 입력해주세요.');
             document.querySelector('#userPW+div.msg').innerHTML = '필수항목입니다.';
             document.querySelector('#userPW+div.msg').style.display = 'block';
@@ -77,6 +69,15 @@ window.onload = function () {
             return false;
             
         }
+
+        if (userRepw.value.trim().length < 1) {
+            // alert('비밀번호를 입력해주세요.');
+            document.querySelector('#userRepw+div.msg').innerHTML = '필수항목입니다.';
+            document.querySelector('#userRepw+div.msg').style.display = 'block';
+            document.querySelector('#userRepw+div.msg').style.color = 'red';
+            return false;            
+        }
+
         // 비밀번호와 비밀번호 확인 일치 여부 체크
         if (!(userPW.value.trim() == userRepw.value.trim())) {
             // alert('비밀번호와 비밀번호 확인과 일치하지 않습니다.\n 다시 확인해주세요.');
@@ -94,7 +95,16 @@ window.onload = function () {
             return false;
         }
 
-        console.log(userID.value, userPW.value, userRepw.value, userName.value);
+        // 중복 아이디 체크
+        console.log(typeof userID.value, typeof members[0].userID);
+        for (var i = 0; i < members.length; i++){
+            if (userID.value == members[i].userID) {
+                alert('중복아이디가 있습니다.');
+                return false;
+            }
+        }
+
+        // console.log(userID.value, userPW.value, userRepw.value, userName.value);
 
         // 받아온 입력 값으로 member 객체 생성
         // var member = new Member(userID, userPW, userName);
@@ -114,7 +124,8 @@ window.onload = function () {
         
         // 테이블 세팅
         setList();
-
+        
+        // 브라우저 안에서 해결하기 때문에 보낼 필요 없다.
         return false;
     }
     // focus : div.msg 없애주기
