@@ -96,7 +96,6 @@ window.onload = function () {
         }
 
         // 중복 아이디 체크
-        console.log(typeof userID.value, typeof members[0].userID);
         for (var i = 0; i < members.length; i++){
             if (userID.value == members[i].userID) {
                 alert('중복아이디가 있습니다.');
@@ -229,7 +228,7 @@ function editMember(index) {
     var editRepw = document.querySelector('#editRepw');
     var editName = document.querySelector('#editName');
     var editIndex = document.querySelector('#index');
-
+   
     // 이전 데이터를 수정 폼에 세팅
     editId.value = members[index].userID;
     editPw.value = members[index].userPW;
@@ -252,11 +251,11 @@ function editMember(index) {
             return false;
         }
         
-
+        // 정보 저장
         members[editIndex.value].userPW = editPw.value;
         members[editIndex.value].userName = editName.value;
 
-        // 저장
+        // 저장소에 저장
         localStorage.setItem('members', JSON.stringify(members));
         
         alert('수정되었습니다.');
