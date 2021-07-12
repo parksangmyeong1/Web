@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - event</title>
+    </style>
+        <script src="https://code.jquery.com/jquery-1.12.4.js" 
+        integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" 
+        crossorigin="anonymous">
+    </script>
+    <style>
+        h1,h2{
+            border: 1px solid #AAA;
+        }
+        h1:hover,h2:hover{
+            cursor: pointer;
+        }
+        .reverse{
+            background-color: black;
+            color: white;
+        }
+        div{
+            border: 3px solid #AAA;
+            padding: 10px;
+            margin: 10px 0;
+
+            border-radius: 5px;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+
+            // h1태그를 캐스팅 -> click 이벤트를 연결
+            $('h1').on('click',function(){
+                // this -> 이벤트가 발생한 엘리먼트 객체를 가르킨다.
+                $(this).html(function(index,html){
+                    return html + '+';
+                });
+            });
+
+            $('h1').on({
+                mouseenter : function(){
+                    $(this).addClass('reverse');
+                },
+                mouseleave : function(){
+                    $(this).removeClass('reverse');
+                }
+            });
+
+            // .hover() -> mouseenter, mouseleave 한번에 연결
+            $('h2').hover(function(){
+                $(this).addClass('reverse');
+            },function(){
+                $(this).removeClass('reverse');
+                //mouseenter, mouseleave 둘다 제거
+                // $(this).off(); 
+                // mouseleave만 제거, 해당이벤트를 한번만 하고 멈춤
+                $(this).off('mouseleave'); 
+            });
+
+            $('div').click(function(e){
+                // 이벤트가 발생한 div -> this
+                // $('h3', this) -> 이벤트가 발생한 div 안에 위치한 h3을 선택
+                var h3 = $('h3', this).text();
+                var p = $('p', this).text();
+                var value = $('input', this).val();
+
+                alert(h3 + '\n' + p + '\n' + value);
+
+                console.log(e);
+            });
+
+            // 1초마다 마지막 h1태그를 강제 클릭
+            // setInterval(function(){
+            //     $('h1').last().trigger('click');
+            // },1000);
+
+            $('a').click(function(e){
+                alert('a tag click');
+
+                // window event 받아오기
+                var event = e || window.event;
+
+                // 이벤트 버블링 제거
+                if(event.stopPropagation){
+                    event.stopPropagation();
+                }
+
+                // 기본 이벤트 제거
+                event.preventDefault();
+
+                // 위 두기능을 한번에 해결
+                // return false; 
+            });
+
+
+
+
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <h1><a href="http://www.naver.com">click</a></h1>
+    </div>
+
+    <div>
+        <input id="value" type="hidden" value="1">
+        <h3>header3 - 0</h3>
+        <p>paragraph</p>
+    </div>
+    <div>
+        <h3>header3 - 1</h3>
+        <p>paragraph</p>
+    </div>
+    <div>
+        <h3>header3 - 2</h3>
+        <p>paragraph</p>
+    </div>
+
+    <h1>header - 0</h1>
+    <h1>header - 1</h1>
+    <h1>header - 2</h1>
+
+    <h2>header2 - 0</h2>
+</body>
+</html>
