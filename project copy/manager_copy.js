@@ -64,7 +64,7 @@ $(document).ready(function(){
                 return false;
             };
         }
-        
+
         if(userPW.val().trim().length < 1){
             $('#userPW + .msg').html('필수항목입니다.');
             $('#userPW + .msg').css({display : 'block', color : 'red'});
@@ -76,7 +76,7 @@ $(document).ready(function(){
                 return false;
             }
         }
-        
+
         if(userRepw.val().trim().length < 1){
             $('#userRepw + .msg').html('필수항목입니다.');
             $('#userRepw + .msg').css({display : 'block', color : 'red'});
@@ -94,6 +94,12 @@ $(document).ready(function(){
             $('#userName + .msg').html('필수항목입니다.');
             $('#userName + .msg').css({display : 'block', color : 'red'});
             return false;
+        }else{
+            if(!isName(userName.val())){
+                $('#userName + .msg').html('2~12자 영문 대 소문자, 한글을 사용해주세요');
+                $('#userName + .msg').css({display : 'block', color : 'red'});
+                return false;
+            }
         }
 
         // 아이디 중복 체크
@@ -103,8 +109,6 @@ $(document).ready(function(){
                 return false;
             }
         }
-
-        
 
         // members 배열에 정보 추가
         members.push(new Member(userID.val(), userPW.val(), userName.val()));
@@ -177,17 +181,17 @@ $(document).ready(function(){
 });
 // userID 정규식 함수 : 이메일 형식
 function isId(string){
-    var regExp = /\w+@\w+\.\w{3,4}/;
+    var regExp = /\w+@\w+\.\w/ig;
     return regExp.test(string);
 };
-// userPw 정규식 함수 : 영문 숫자로 이루어짐 4-12글자
+// userPw 정규식 함수 : 영어, 숫자로 이루어짐 4-12글자
 function isPassword(string){
-    var regExp = /[A-Za-z0-9]{4,12}/;
+    var regExp = /^[A-Za-z0-9]{4,12}$/ig;
     return regExp.test(string);
 }
-// userName 정규식 함수 : 영문 한글로 이루어짐 2-12글자
+// userName 정규식 함수 : 영어, 한글로 이루어짐 2-12글자
 function isName(string){
-    var regExp = /[A-Za-z가-힇]{2,12}/;
+    var regExp = /^[A-Za-z가-힇]{2,12}$/ig;
     return regExp.test(string);
 }
 
@@ -196,7 +200,7 @@ function setList() {
 
     var tbody = '<tr>';
     tbody += '<th>순번(index)</th>';
-    tbody += '<th>아이디</th>';
+    tbody += '<th>아이디(이메일)</th>';
     tbody += '<th>비밀번호</th>';
     tbody += '<th>이름</th>';
     tbody += '<th>관리</th>';
