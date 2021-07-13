@@ -57,17 +57,24 @@ $(document).ready(function(){
             $('#userID + .msg').css({display : 'block', color : 'red'});
             return false;
         }
-        // userId regExp
-        if(!isId(userID.val())){
-            $('#userID + .msg').html('영어와 숫자로 이루어진 아이디를 입력해주세요.');
-            $('#userID + .msg').css({display : 'block', color : 'red'});
-            return false;
-        };
-
+        else{
+            if(!isId(userID.val())){
+                $('#userID + .msg').html('영문 대 소문자, 숫자를 사용해주세요');
+                $('#userID + .msg').css({display : 'block', color : 'red'});
+                return false;
+            };
+        }
+        
         if(userPW.val().trim().length < 1){
             $('#userPW + .msg').html('필수항목입니다.');
             $('#userPW + .msg').css({display : 'block', color : 'red'});
             return false;
+        }else{
+            if(!isPassword(userPW.val())){
+                $('#userPW + .msg').html('4~12자 영문 대 소문자, 숫자를 사용해주세요');
+                $('#userPW + .msg').css({display : 'block', color : 'red'});
+                return false;
+            }
         }
         
         if(userRepw.val().trim().length < 1){
@@ -92,16 +99,12 @@ $(document).ready(function(){
         // 아이디 중복 체크
         for (var i = 0; i < members.length; i++){
             if (userID.val() == members[i].userID) {
-                alert('중복아이디가 있습니다.');
+                alert('이미 사용중인 아이디입니다.');
                 return false;
             }
         }
 
-        // userID 정규식 함수
-        function isId(string){
-            var regExp = /^[a-zA-Z0-9]{1,12}$/;
-            return regExp.test(string);
-        };
+        
 
         // members 배열에 정보 추가
         members.push(new Member(userID.val(), userPW.val(), userName.val()));
@@ -172,6 +175,21 @@ $(document).ready(function(){
     });
 
 });
+// userID 정규식 함수 : 이메일 형식
+function isId(string){
+    var regExp = /\w+@\w+\.\w{3,4}/;
+    return regExp.test(string);
+};
+// userPw 정규식 함수 : 영문 숫자로 이루어짐 4-12글자
+function isPassword(string){
+    var regExp = /[A-Za-z0-9]{4,12}/;
+    return regExp.test(string);
+}
+// userName 정규식 함수 : 영문 한글로 이루어짐 2-12글자
+function isName(string){
+    var regExp = /[A-Za-z가-힇]{2,12}/;
+    return regExp.test(string);
+}
 
 // 테이블 세팅 함수
 function setList() {
