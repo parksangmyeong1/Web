@@ -6,23 +6,128 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>burgerking</title>
     <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
         #order{
             text-align: center;
         }
+        .section input[id*='slide']{
+            display: none;
+        }
+        .section .slidewrap{
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .section .slidelist{
+            white-space: nowrap;
+            font-size: 0;
+        }
+        .section .slidelist >li{
+            display: inline-block;
+            vertical-align: middle;
+            width: 100%;
+            transition: all .5s;
+        }
+        .section .slidelist > li > a{
+            display: block;
+            position: relative;
+        }
+        .section .slidelist > li > a img{
+            width: 100%;
+        }
+        .section .slidelist label{
+            position: absolute;
+            z-index: 10;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 50px;
+            cursor: pointer;
+        }
+        .section .slidelist .left{
+            left: 30px;
+            background:url('left.png') center center / 100% no-repeat;
+        }
+        .section .slidelist .right{
+            left: 30px;
+            background:url('right.png') center center / 100% no-repeat;
+        }
+        .section [id = 'slide01']:checked ~ .slidewrap .slidelist > li {
+            transform:translateX(0%);
+        }
+        .section [id = 'slide02']:checked ~ .slidewrap .slidelist > li {
+            transform:translateX(-100%);
+        }
+        .section [id = 'slide03']:checked ~ .slidewrap .slidelist > li {
+            transform:translateX(-200%);
+        }
+        .section [id = 'slide04']:checked ~ .slidewrap .slidelist > li {
+            transform:translateX(-300%);
+        }
+        .section [id = 'slide05']:checked ~ .slidewrap .slidelist > li {
+            transform:translateX(-400%);
+        }
+       
     </style>
-    <script>
-
+    <script src="https://code.jquery.com/jquery-1.12.4.js" 
+        integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" 
+        crossorigin="anonymous">
     </script>
 </head>
 <body>
     <header>
-        <a href="#"><img src="logo.png" width="200px"></a>
+        <a href="main.html"><img src="logo.png" width="200px"></a>
         <!-- 로고 버튼 누를시 메인화면으로 -->
     </header>
-    <div id="menuPage">
-        <!-- 이미지 슬라이드 -->
-        <!-- 슬라이드 화살표시나 밑에 바로 설정 -->
-        <!-- 해당 메뉴의 페이지로 이동 -->
+    <div class="section">
+        <input type="radio" name="slide" id="slide01" checked>
+        <input type="radio" name="slide" id="slide02">
+        <input type="radio" name="slide" id="slide03">
+        <input type="radio" name="slide" id="slide04">
+        <input type="radio" name="slide" id="slide05">
+
+        <div class="slidewrap">
+            <ul class="slidelist">
+                <li>
+                    <a>
+                        <label for="slide05" class="left"></label>
+                        <img src="slide_1.png">
+                        <label for="slide02" class="right"></label>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <label for="slide01" class="left"></label>
+                        <img src="slide_2.png">
+                        <label for="slide03" class="right"></label>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <label for="slide02" class="left"></label>
+                        <img src="slide_3.png">
+                        <label for="slide04" class="right"></label>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <label for="slide03" class="left"></label>
+                        <img src="slide_4.png">
+                        <label for="slide05" class="right"></label>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <label for="slide04" class="left"></label>
+                        <img src="slide_5.png">
+                        <label for="slide01" class="right"></label>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
     </div>
     <div id="order">
         <a href="file:///C:/Users/parks/JAVA/Web/individual_project/order_store.html"><img src="store.jpg" width="200"></a>
@@ -32,5 +137,6 @@
         <!-- 사이트 정보 -->
     </footer>
 
+    
 </body>
 </html>
